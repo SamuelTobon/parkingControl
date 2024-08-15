@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
-@RequestMapping("/api/usuario")
-// @RequestMapping("/usuario")
+// @RequestMapping("/api/usuario")
+@RequestMapping("/usuario")
 public class UserController {
 
     private UserInt servicio;

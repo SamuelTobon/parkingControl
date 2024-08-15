@@ -11,6 +11,6 @@ public interface UserRepositoy extends JpaRepository<UserLogin, Integer> {
 
     public void eliminarUsuario(UserLogin userLogin);
 
-    public void buscarById(String nombre);
+    // public void buscarById(String nombre);
 
 }

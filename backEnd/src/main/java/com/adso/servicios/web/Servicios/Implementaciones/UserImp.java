@@ -38,8 +38,15 @@ public class UserImp implements UserInt {
 
     @Override
     public Object buscar(String nombre) {
-        repositorio.buscarById(nombre);
-        return nombre;
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'buscar'");
     }
 
+    /*
+     * @Override
+     * public Object buscar(String nombre) {
+     * repositorio.buscarById(nombre);
+     * return nombre;
+     * }
+     */
 }

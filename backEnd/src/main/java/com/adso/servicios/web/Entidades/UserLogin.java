@@ -13,15 +13,16 @@ import jakarta.persistence.Table;
 public class UserLogin {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(unique = true, nullable = false)
     private Integer id_usuario;
 
-    @Column(name = "nombre", nullable = false, length = 50)
+    @Column(name = "nombre", nullable = false, length = 45)
     @NonNull
     private String nombre;
-    @Column(name = "apellido", nullable = false, length = 50)
+    @Column(name = "apellido", nullable = false, length = 45)
     @NonNull
     private String apellido;
-    @Column(name = "correo", nullable = false, length = 100)
+    @Column(name = "correo", nullable = false, length = 45)
     @NonNull
     private String correo;
 
