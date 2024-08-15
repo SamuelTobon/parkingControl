@@ -46,18 +46,6 @@ public class UserController {
     }
 
     @CrossOrigin(origins = "*")
-    @PatchMapping
-    public ResponseEntity<?> buscarUser(@RequestBody UserLogin userLogin) {
-        return ResponseEntity.ok(servicio.buscar(userLogin.getNombre()));
-    }
-
-    @CrossOrigin(origins = "*")
-    @PutMapping
-    public ResponseEntity<?> editarUser(@RequestBody UserLogin userLogin) {
-        return ResponseEntity.ok(servicio.buscar(userLogin.getNombre()));
-    }
-
-    @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable Integer id) {
         Optional<UserLogin> userLogin = servicio.findById(id);

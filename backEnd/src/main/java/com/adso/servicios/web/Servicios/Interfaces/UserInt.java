@@ -14,6 +14,6 @@ public interface UserInt {
 
     public void delete(Integer id);
 
-    public Object buscar(String nombre);
+    // public Object buscar(String nombre);
 
 }
