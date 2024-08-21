@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 
 import com.adso.servicios.web.Servicios.Interfaces.CarInt;
-import com.adso.servicios.web.Servicios.Interfaces.ParqueaderoInt;
 
 @Service
 public class CarImp implements CarInt {
@@ -24,7 +23,7 @@ public class CarImp implements CarInt {
     }
 
     @Override
-    public ParqueaderoInt save(CarInt car) {
+    public CarInt save(CarInt car) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }

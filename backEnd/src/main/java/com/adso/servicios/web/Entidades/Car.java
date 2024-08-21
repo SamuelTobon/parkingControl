@@ -1,5 +1,7 @@
 package com.adso.servicios.web.Entidades;
 
+import java.time.LocalDateTime;
+
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -31,10 +33,10 @@ public class Car {
     @Column(name = "color", nullable = false, length = 45)
     private String color;
     @NonNull
-    @Column(name = "fecha_ingreso", nullable = false, length = 45)
-    private String fechaIngreso;
+    @Column(name = "fecha_ingreso", nullable = false)
+    private LocalDateTime fechaIngreso;
     @NonNull
-    @Column(name = "fecha_salida", nullable = false, length = 45)
-    private String fechaSalida;
+    @Column(name = "fecha_salida", nullable = false)
+    private LocalDateTime fechaSalida;
 
 }

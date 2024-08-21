@@ -8,7 +8,7 @@ public interface CarInt {
 
     public Optional<CarInt> findById(Integer id);
 
-    public ParqueaderoInt save(CarInt car);
+    public CarInt save(CarInt car);
 
     public void delete(Integer id);
 
