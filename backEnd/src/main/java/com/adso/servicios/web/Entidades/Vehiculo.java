@@ -21,7 +21,7 @@ public class Vehiculo {
     @Column(name = "tipoVehiculo", nullable = false, length = 45)
     private String tipo;
     @NonNull
-    @Column(name = "placa", nullable = false, length = 45)
+    @Column(name = "placa", nullable = false, length = 8)
     private String placa;
     @NonNull
     @Column(name = "marcaVehiculo", nullable = false, length = 45)

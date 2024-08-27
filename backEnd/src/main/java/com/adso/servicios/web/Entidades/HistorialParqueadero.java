@@ -1,5 +1,7 @@
 package com.adso.servicios.web.Entidades;
 
+import java.time.LocalDateTime;
+
 import io.micrometer.common.lang.NonNull;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -16,10 +18,10 @@ public class HistorialParqueadero {
     private int idHistorial;
     @NonNull
     @Column(name = "fechaHoraIngreso", nullable = false, length = 45)
-    private String fechaIngreso;
+    private LocalDateTime fechaIngreso;
     @NonNull
     @Column(name = "fechaHoraSalida", nullable = false, length = 45)
-    private String fechaSalida;
+    private LocalDateTime fechaSalida;
     @NonNull
     @Column(name = "totalTiempo", nullable = false, length = 45)
     private int totalTiempo;
@@ -35,19 +37,19 @@ public class HistorialParqueadero {
         this.idHistorial = idHistorial;
     }
 
-    public String getFechaIngreso() {
+    public LocalDateTime getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
+    public void setFechaIngreso(LocalDateTime fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
-    public String getFechaSalida() {
+    public LocalDateTime getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(LocalDateTime fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
