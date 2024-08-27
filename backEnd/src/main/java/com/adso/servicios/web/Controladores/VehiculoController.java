@@ -6,17 +6,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.adso.servicios.web.Servicios.Interfaces.CarInt;
+import com.adso.servicios.web.Servicios.Interfaces.VehiculoInt;
 
 @RestController
 @RequestMapping("/vehiculo")
-public class CarCotroller {
+public class VehiculoController {
 
-    private CarInt servicio;
+    private VehiculoInt servicio;
 
     @CrossOrigin(origins = "*")
     @GetMapping
-    public ResponseEntity<?> listarFactura() {
+    public ResponseEntity<?> listarCar() {
         return ResponseEntity.ok(servicio.finAll());
     }
 

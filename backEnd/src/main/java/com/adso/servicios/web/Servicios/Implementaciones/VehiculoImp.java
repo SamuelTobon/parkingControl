@@ -5,25 +5,26 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.adso.servicios.web.Servicios.Interfaces.CarInt;
+import com.adso.servicios.web.Entidades.Vehiculo;
+import com.adso.servicios.web.Servicios.Interfaces.VehiculoInt;
 
 @Service
-public class CarImp implements CarInt {
+public class VehiculoImp implements VehiculoInt {
 
     @Override
-    public List<CarInt> finAll() {
+    public List<VehiculoInt> finAll() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'finAll'");
     }
 
     @Override
-    public Optional<CarInt> findById(Integer id) {
+    public Optional<VehiculoInt> findById(Integer id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 
     @Override
-    public CarInt save(CarInt car) {
+    public VehiculoInt save(Vehiculo car) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }

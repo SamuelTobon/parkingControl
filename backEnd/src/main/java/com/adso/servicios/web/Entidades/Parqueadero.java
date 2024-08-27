@@ -32,4 +32,51 @@ public class Parqueadero {
     @Column(name = "capacidad_actual", nullable = false, length = 11)
     private int capacidad_actual;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public int getCapacidad_total() {
+        return capacidad_total;
+    }
+
+    public void setCapacidad_total(int capacidad_total) {
+        this.capacidad_total = capacidad_total;
+    }
+
+    public int getCapacidad_actual() {
+        return capacidad_actual;
+    }
+
+    public void setCapacidad_actual(int capacidad_actual) {
+        this.capacidad_actual = capacidad_actual;
+    }
 }

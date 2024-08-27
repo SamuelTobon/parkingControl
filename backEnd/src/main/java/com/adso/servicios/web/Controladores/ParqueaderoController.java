@@ -4,12 +4,17 @@ import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.adso.servicios.web.Entidades.Car;
+import com.adso.servicios.web.Entidades.Vehiculo;
+import com.adso.servicios.web.Entidades.Parqueadero;
 import com.adso.servicios.web.Servicios.Interfaces.ParqueaderoInt;
 
 @RestController
@@ -27,11 +32,34 @@ public class ParqueaderoController {
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     public ResponseEntity<?> listarParqueaderoById(@PathVariable Integer id) {
-        Optional<Car> car = Optional.empty();
+        Optional<Vehiculo> car = Optional.empty();
         if (car.isPresent()) {
             return ResponseEntity.ok(servicio.findById(id));
         }
         return ResponseEntity.notFound().build();
     }
 
+    @CrossOrigin(origins = "*")
+    @PostMapping
+    public ResponseEntity<?> crearParqueadero(@RequestBody Parqueadero parqueadero) {
+        return ResponseEntity.ok(servicio.save(parqueadero));
+
+    }
+
+    @CrossOrigin(origins = "*")
+    @PutMapping
+    public ResponseEntity<?> editarParqueadero(@RequestBody Parqueadero parqueadero) {
+        return ResponseEntity.ok(servicio.save(parqueadero));
+    }
+
+    @CrossOrigin(origins = "*")
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
+        Optional<Parqueadero> parqueadero = Optional.empty();
+        if (parqueadero.isPresent()) {
+            servicio.delete(parqueadero.get());
+
+        }
+        return ResponseEntity.ok().build();
+    }
 }
