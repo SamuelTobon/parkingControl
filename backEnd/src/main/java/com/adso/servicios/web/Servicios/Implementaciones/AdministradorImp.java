@@ -5,34 +5,32 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.adso.servicios.web.Entidades.Factura;
-import com.adso.servicios.web.Servicios.Interfaces.FacturaInt;
+import com.adso.servicios.web.Entidades.Administradores;
+import com.adso.servicios.web.Servicios.Interfaces.AdministradorInt;
 
 @Service
-public class FacturaImp implements FacturaInt {
+public class AdministradorImp implements AdministradorInt {
 
     @Override
-    public List<FacturaInt> finAll() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'finAll'");
+    public List<AdministradorInt> finAll() {
+        return null;
     }
 
     @Override
-    public void save(Factura factura) {
+    public void save(Administradores administrador) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'save'");
     }
 
     @Override
-    public Optional<FacturaInt> findById(Integer id) {
+    public Optional<AdministradorInt> findById(Integer id) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 
     @Override
-    public void delete(Factura factura) {
+    public void delete(Administradores administrador) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'delete'");
     }
-
 }

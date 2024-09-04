@@ -12,6 +12,6 @@ public interface FacturaInt {
 
     public Optional<FacturaInt> findById(Integer id);
 
-    public void delete(Integer id);
+    public void delete(Factura factura);
 
 }
