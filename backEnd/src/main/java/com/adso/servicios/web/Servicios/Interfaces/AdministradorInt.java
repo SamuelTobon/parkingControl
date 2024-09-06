@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.adso.servicios.web.Entidades.Administradores;
 
 public interface AdministradorInt {
-    public List<Administradores> finAll();
+    public List<Administradores> findAll();
 
     public void save(Administradores administrador);
 

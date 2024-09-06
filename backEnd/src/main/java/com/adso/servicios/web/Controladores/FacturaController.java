@@ -26,7 +26,7 @@ public class FacturaController {
     @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<?> listarFactura() {
-        return ResponseEntity.ok(servicio.finAll());
+        return ResponseEntity.ok(servicio.findAll());
     }
 
     @CrossOrigin(origins = "*")

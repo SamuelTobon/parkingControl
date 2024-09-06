@@ -7,7 +7,7 @@ import com.adso.servicios.web.Entidades.VehiculoRegistrado;
 
 public interface VehiculoRegistradoInt {
 
-    public List<VehiculoRegistrado> finAll();
+    public List<VehiculoRegistrado> findAll();
 
     public Optional<VehiculoRegistrado> findById(Integer id);
 

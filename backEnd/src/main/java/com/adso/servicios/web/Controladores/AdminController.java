@@ -27,7 +27,7 @@ public class AdminController {
     @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<?> listarAdmin() {
-        return ResponseEntity.ok(servicio.finAll());
+        return ResponseEntity.ok(servicio.findAll());
 
     }
 

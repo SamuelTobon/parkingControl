@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.adso.servicios.web.Entidades.Factura;
 
 public interface FacturaInt {
-    public List<Factura> finAll();
+    public List<Factura> findAll();
 
     public void save(Factura factura);
 

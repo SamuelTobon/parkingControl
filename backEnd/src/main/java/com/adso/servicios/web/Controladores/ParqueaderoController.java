@@ -56,7 +56,7 @@ public class ParqueaderoController {
     public ResponseEntity<?> eliminarParqueadero(@PathVariable Integer id) {
         Optional<Parqueadero> parqueadero = Optional.empty();
         if (parqueadero.isPresent()) {
-            servicio.delete(parqueadero.get());
+            servicio.delete(id);
 
         }
         return ResponseEntity.ok().build();

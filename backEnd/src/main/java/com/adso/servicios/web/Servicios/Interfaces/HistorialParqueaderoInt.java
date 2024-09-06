@@ -6,7 +6,7 @@ import java.util.Optional;
 import com.adso.servicios.web.Entidades.HistorialParqueadero;
 
 public interface HistorialParqueaderoInt {
-    public List<HistorialParqueadero> finAll();
+    public List<HistorialParqueadero> findAll();
 
     public void save(HistorialParqueadero HistorialParqueadero);
 

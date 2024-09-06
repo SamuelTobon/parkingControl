@@ -17,7 +17,7 @@ public class AdministradorImp implements AdministradorInt {
     private AdministradorRepository administradorRepository;
 
     @Override
-    public List<Administradores> finAll() {
+    public List<Administradores> findAll() {
         return administradorRepository.findAll();
     }
 

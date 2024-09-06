@@ -17,7 +17,7 @@ public class VehiculoImp implements VehiculoInt {
     private VehiculoRepositoy repositoy;
 
     @Override
-    public List<Vehiculo> finAll() {
+    public List<Vehiculo> findAll() {
         return repositoy.findAll();
     }
 

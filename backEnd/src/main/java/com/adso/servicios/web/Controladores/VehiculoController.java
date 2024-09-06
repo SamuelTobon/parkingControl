@@ -25,7 +25,7 @@ public class VehiculoController {
     @CrossOrigin(origins = "*")
     @GetMapping
     public ResponseEntity<?> listCarParked() {
-        return ResponseEntity.ok(servicio.finAll());
+        return ResponseEntity.ok(servicio.findAll());
     }
 
     @CrossOrigin(origins = "*")
