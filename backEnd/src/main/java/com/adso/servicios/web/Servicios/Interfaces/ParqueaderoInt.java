@@ -7,12 +7,12 @@ import com.adso.servicios.web.Entidades.Parqueadero;
 
 public interface ParqueaderoInt {
 
-    public List<ParqueaderoInt> findAll();
+    public List<Parqueadero> findAll();
 
-    public Optional<ParqueaderoInt> findById(Integer id);
+    public Optional<Parqueadero> findById(Integer id);
 
-    public ParqueaderoInt save(Parqueadero parqueadero);
+    public Parqueadero save(Parqueadero parqueadero);
 
-    public void delete(Parqueadero parqueadero);
+    public void delete(Integer id);
 
 }

@@ -6,11 +6,11 @@ import java.util.Optional;
 import com.adso.servicios.web.Entidades.Vehiculo;
 
 public interface VehiculoInt {
-    public List<VehiculoInt> finAll();
+    public List<Vehiculo> finAll();
 
-    public Optional<VehiculoInt> findById(Integer id);
+    public Optional<Vehiculo> findById(Integer id);
 
-    public VehiculoInt save(Vehiculo car);
+    public Vehiculo save(Vehiculo car);
 
     public void delete(Integer id);
 

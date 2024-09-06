@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 public class Vehiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idVehiculo;
+    private Integer idVehiculo;
 
     @NonNull
     @Column(name = "tipoVehiculo", nullable = false, length = 45)
@@ -37,11 +37,11 @@ public class Vehiculo {
     @Column(name = "puesto", nullable = false, length = 5)
     private String puesto;
 
-    public int getIdVehiculo() {
+    public Integer getIdVehiculo() {
         return idVehiculo;
     }
 
-    public void setIdVehiculo(int idVehiculo) {
+    public void setIdVehiculo(Integer idVehiculo) {
         this.idVehiculo = idVehiculo;
     }
 

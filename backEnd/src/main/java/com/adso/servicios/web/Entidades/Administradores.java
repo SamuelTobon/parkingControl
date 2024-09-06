@@ -25,7 +25,7 @@ public class Administradores {
     private String contraseña;
 
     // Getters y Setters
-    public int getIdAdministrador() {
+    public Integer getIdAdministrador() {
         return idAdministrador;
     }
 

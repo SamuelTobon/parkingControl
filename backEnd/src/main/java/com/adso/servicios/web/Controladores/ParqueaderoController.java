@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.adso.servicios.web.Entidades.Vehiculo;
 import com.adso.servicios.web.Entidades.Parqueadero;
 import com.adso.servicios.web.Servicios.Interfaces.ParqueaderoInt;
 
@@ -32,8 +31,8 @@ public class ParqueaderoController {
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
     public ResponseEntity<?> listarParqueaderoById(@PathVariable Integer id) {
-        Optional<Vehiculo> car = Optional.empty();
-        if (car.isPresent()) {
+        Optional<Parqueadero> parqueadero = Optional.empty();
+        if (parqueadero.isPresent()) {
             return ResponseEntity.ok(servicio.findById(id));
         }
         return ResponseEntity.notFound().build();
@@ -54,7 +53,7 @@ public class ParqueaderoController {
 
     @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<?> eliminarParqueadero(@PathVariable Integer id) {
         Optional<Parqueadero> parqueadero = Optional.empty();
         if (parqueadero.isPresent()) {
             servicio.delete(parqueadero.get());

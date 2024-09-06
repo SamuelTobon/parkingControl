@@ -6,12 +6,14 @@ import java.util.Optional;
 import com.adso.servicios.web.Entidades.Administradores;
 
 public interface AdministradorInt {
-    public List<AdministradorInt> finAll();
+    public List<Administradores> finAll();
 
     public void save(Administradores administrador);
 
-    public Optional<AdministradorInt> findById(Integer id);
+    public Optional<Administradores> findById(Integer id);
 
-    public void delete(Administradores administrador);
+    public void delete(Integer id);
+
+    public void buscar(Administradores administrador);
 
 }

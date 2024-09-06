@@ -14,7 +14,7 @@ public class Parqueadero {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @NonNull
     @Column(name = "nombre", nullable = false, length = 45)
@@ -32,11 +32,11 @@ public class Parqueadero {
     @Column(name = "capacidad_actual", nullable = false, length = 11)
     private int capacidad_actual;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

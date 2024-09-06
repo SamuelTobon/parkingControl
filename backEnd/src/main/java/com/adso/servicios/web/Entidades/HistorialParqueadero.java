@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 public class HistorialParqueadero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idHistorial;
+    private Integer idHistorial;
     @NonNull
     @Column(name = "fechaHoraIngreso", nullable = false, length = 45)
     private LocalDateTime fechaIngreso;

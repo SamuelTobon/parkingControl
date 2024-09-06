@@ -15,7 +15,7 @@ import jakarta.persistence.Table;
 public class VehiculoRegistrado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idVehiculo;
+    private Integer idVehiculo;
     @NonNull
     @Column(name = "placa", nullable = false, length = 8)
     private String placa;
@@ -44,11 +44,11 @@ public class VehiculoRegistrado {
     private LocalDateTime fechaVencimiento;
     // Getters y Setters
 
-    public int getIdVehiculo() {
+    public Integer getIdVehiculo() {
         return idVehiculo;
     }
 
-    public void setIdVehiculo(int idVehiculo) {
+    public void setIdVehiculo(Integer idVehiculo) {
         this.idVehiculo = idVehiculo;
     }
 

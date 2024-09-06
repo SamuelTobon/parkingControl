@@ -3,34 +3,42 @@ package com.adso.servicios.web.Servicios.Implementaciones;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adso.servicios.web.Entidades.Administradores;
+import com.adso.servicios.web.Repositorios.AdministradorRepository;
 import com.adso.servicios.web.Servicios.Interfaces.AdministradorInt;
 
 @Service
 public class AdministradorImp implements AdministradorInt {
 
+    @Autowired
+    private AdministradorRepository administradorRepository;
+
     @Override
-    public List<AdministradorInt> finAll() {
-        return null;
+    public List<Administradores> finAll() {
+        return administradorRepository.findAll();
     }
 
     @Override
     public void save(Administradores administrador) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        administradorRepository.save(administrador);
+
     }
 
     @Override
-    public Optional<AdministradorInt> findById(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    public Optional<Administradores> findById(Integer id) {
+        return administradorRepository.findById(id);
     }
 
     @Override
-    public void delete(Administradores administrador) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+    public void delete(Integer id) {
+        administradorRepository.deleteById(id);
+    }
+
+    @Override
+    public void buscar(Administradores administrador) {
+        administradorRepository.findById(administrador.getIdAdministrador());
     }
 }

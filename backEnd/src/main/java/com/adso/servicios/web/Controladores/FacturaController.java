@@ -48,13 +48,13 @@ public class FacturaController {
 
     @CrossOrigin(origins = "*")
     @PutMapping
-    public ResponseEntity<?> editarParqueadero(@RequestBody Factura factura) {
+    public ResponseEntity<?> editarFactura(@RequestBody Factura factura) {
         return (ResponseEntity<?>) ResponseEntity.ok();
     }
 
     @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<?> eliminarFactura(@PathVariable Integer id) {
         Optional<Factura> factura = Optional.empty();
         if (factura.isPresent()) {
             servicio.delete(factura.get());
