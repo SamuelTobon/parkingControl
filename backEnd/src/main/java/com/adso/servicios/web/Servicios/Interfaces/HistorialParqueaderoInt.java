@@ -8,7 +8,7 @@ import com.adso.servicios.web.Entidades.HistorialParqueadero;
 public interface HistorialParqueaderoInt {
     public List<HistorialParqueadero> findAll();
 
-    public void save(HistorialParqueadero HistorialParqueadero);
+    public HistorialParqueadero save(HistorialParqueadero HistorialParqueadero);
 
     public Optional<HistorialParqueadero> findById(Integer id);
 

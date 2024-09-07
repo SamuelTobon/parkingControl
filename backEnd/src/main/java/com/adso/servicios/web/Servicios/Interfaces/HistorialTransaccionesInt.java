@@ -8,7 +8,7 @@ import com.adso.servicios.web.Entidades.HistorialTransacciones;
 public interface HistorialTransaccionesInt {
     public List<HistorialTransacciones> findAll();
 
-    public void save(HistorialTransacciones historialTransacciones);
+    public HistorialTransacciones save(HistorialTransacciones historialTransacciones);
 
     public Optional<HistorialTransacciones> findById(Integer id);
 

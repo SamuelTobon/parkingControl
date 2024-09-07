@@ -17,7 +17,7 @@ import com.adso.servicios.web.Entidades.HistorialTransacciones;
 import com.adso.servicios.web.Servicios.Interfaces.HistorialTransaccionesInt;
 
 @RestController
-@RequestMapping("/historialtransacciones")
+@RequestMapping("/api/historialtransacciones")
 public class HistorialTransaccionesController {
 
     private HistorialTransaccionesInt servicio;

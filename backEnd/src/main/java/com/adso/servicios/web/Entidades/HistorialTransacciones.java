@@ -18,6 +18,9 @@ public class HistorialTransacciones {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idTransaccion;
     @NonNull
+    @Column(name = "idVehiculo", nullable = false)
+    private LocalDateTime idVehiculo;
+    @NonNull
     @Column(name = "fecha", nullable = false)
     private LocalDateTime fecha;
     @NonNull
@@ -26,6 +29,15 @@ public class HistorialTransacciones {
     @NonNull
     @Column(name = "totalTiempo", nullable = false, length = 45)
     private String totalTiempo;
+
+    public LocalDateTime getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(LocalDateTime idVehiculo) {
+        this.idVehiculo = idVehiculo;
+    }
+
     @NonNull
     @Column(name = "totalPagar", nullable = false, length = 45)
     private double totalPagar;

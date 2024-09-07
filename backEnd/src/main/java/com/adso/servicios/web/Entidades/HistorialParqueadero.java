@@ -17,6 +17,9 @@ public class HistorialParqueadero {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idHistorial;
     @NonNull
+    @Column(name = "idVehiculo", nullable = false)
+    private LocalDateTime idVehiculo;
+    @NonNull
     @Column(name = "fechaHoraIngreso", nullable = false, length = 45)
     private LocalDateTime fechaIngreso;
     @NonNull
@@ -35,6 +38,14 @@ public class HistorialParqueadero {
 
     public void setIdHistorial(int idHistorial) {
         this.idHistorial = idHistorial;
+    }
+
+    public LocalDateTime getIdVehiculo() {
+        return idVehiculo;
+    }
+
+    public void setIdVehiculo(LocalDateTime idVehiculo) {
+        this.idVehiculo = idVehiculo;
     }
 
     public LocalDateTime getFechaIngreso() {

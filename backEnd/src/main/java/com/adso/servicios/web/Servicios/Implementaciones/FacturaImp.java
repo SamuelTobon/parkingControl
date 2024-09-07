@@ -17,14 +17,14 @@ public class FacturaImp implements FacturaInt {
     private FacturaRepository facturaRepository;
 
     @Override
-    public List<Factura> finAll() {
+    public List<Factura> findAll() {
         return facturaRepository.findAll();
 
     }
 
     @Override
-    public void save(Factura factura) {
-        facturaRepository.save(factura);
+    public Factura save(Factura factura) {
+        return facturaRepository.save(factura);
     }
 
     @Override
@@ -33,8 +33,9 @@ public class FacturaImp implements FacturaInt {
     }
 
     @Override
-    public void delete(Factura factura) {
-        facturaRepository.delete(factura);
+    public void delete(Integer id) {
+        facturaRepository.deleteById(id);
+
     }
 
 }

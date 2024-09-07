@@ -18,7 +18,7 @@ import com.adso.servicios.web.Servicios.Interfaces.ParqueaderoInt;
 
 @RestController
 
-@RequestMapping("/parqueadero")
+@RequestMapping("/api/parqueadero")
 public class ParqueaderoController {
     private ParqueaderoInt servicio;
 

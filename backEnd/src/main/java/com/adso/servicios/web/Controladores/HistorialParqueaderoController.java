@@ -17,7 +17,7 @@ import com.adso.servicios.web.Entidades.HistorialParqueadero;
 import com.adso.servicios.web.Servicios.Interfaces.HistorialParqueaderoInt;
 
 @RestController
-@RequestMapping("/historialparquadero")
+@RequestMapping("/api/historialparquadero")
 public class HistorialParqueaderoController {
 
     private HistorialParqueaderoInt servicio;

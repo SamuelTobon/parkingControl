@@ -32,8 +32,8 @@ public class HistorialTransaccionImp implements HistorialTransaccionesInt {
     }
 
     @Override
-    public void save(HistorialTransacciones historialTransacciones) {
+    public HistorialTransacciones save(HistorialTransacciones historialTransacciones) {
 
-        repository.save(historialTransacciones);
+        return repository.save(historialTransacciones);
     }
 }

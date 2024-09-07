@@ -8,12 +8,12 @@ import com.adso.servicios.web.Entidades.Administradores;
 public interface AdministradorInt {
     public List<Administradores> findAll();
 
-    public void save(Administradores administrador);
+    public Administradores save(Administradores administrador);
 
     public Optional<Administradores> findById(Integer id);
 
     public void delete(Integer id);
 
-    public void buscar(Administradores administrador);
+    public Optional<List<Administradores>> buscar(String nombre);
 
 }

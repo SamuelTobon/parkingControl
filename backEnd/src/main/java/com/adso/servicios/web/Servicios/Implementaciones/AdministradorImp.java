@@ -22,8 +22,8 @@ public class AdministradorImp implements AdministradorInt {
     }
 
     @Override
-    public void save(Administradores administrador) {
-        administradorRepository.save(administrador);
+    public Administradores save(Administradores administrador) {
+        return administradorRepository.save(administrador);
 
     }
 
@@ -38,7 +38,8 @@ public class AdministradorImp implements AdministradorInt {
     }
 
     @Override
-    public void buscar(Administradores administrador) {
-        administradorRepository.findById(administrador.getIdAdministrador());
+    public Optional<List<Administradores>> buscar(String texto) {
+        return administradorRepository.findByName(texto);
+
     }
 }

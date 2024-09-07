@@ -16,7 +16,7 @@ public class VehiculoRegistradoImp implements VehiculoRegistradoInt {
     private VehiculoRegistradoRepository repository;
 
     @Override
-    public List<VehiculoRegistrado> finAll() {
+    public List<VehiculoRegistrado> findAll() {
 
         return repository.findAll();
     }

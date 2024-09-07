@@ -19,7 +19,7 @@ import com.adso.servicios.web.Entidades.Vehiculo;
 import com.adso.servicios.web.Servicios.Interfaces.FacturaInt;
 
 @RestController
-@RequestMapping("/factura")
+@RequestMapping("/api/factura")
 public class FacturaController {
     private FacturaInt servicio;
 

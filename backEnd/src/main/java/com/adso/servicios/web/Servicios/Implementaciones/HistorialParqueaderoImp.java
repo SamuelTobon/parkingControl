@@ -17,13 +17,13 @@ public class HistorialParqueaderoImp implements HistorialParqueaderoInt {
     private HistorialParquederoRepository repository;
 
     @Override
-    public List<HistorialParqueadero> finAll() {
+    public List<HistorialParqueadero> findAll() {
         return (List<HistorialParqueadero>) repository.findAll();
     }
 
     @Override
-    public void save(HistorialParqueadero HistorialParqueadero) {
-        repository.save(HistorialParqueadero);
+    public HistorialParqueadero save(HistorialParqueadero HistorialParqueadero) {
+        return repository.save(HistorialParqueadero);
     }
 
     @Override
