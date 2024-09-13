@@ -33,10 +33,10 @@ public class AdminController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
-    public ResponseEntity<?> listarAdminById(@PathVariable Integer id) {
-        Optional<Administradores> admin = Optional.empty();
+    public ResponseEntity<?> listarAdminById(@PathVariable(value = "id") Integer id) {
+        Optional<Administradores> admin = servicio.findById(id);
         if (admin.isPresent()) {
-            return ResponseEntity.ok(servicio.findById(id));
+            return ResponseEntity.ok(admin);
         }
         return ResponseEntity.notFound().build();
     }
@@ -44,23 +44,23 @@ public class AdminController {
     @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<?> crearAdmin(@RequestBody Administradores administrador) {
-        return (ResponseEntity<?>) ResponseEntity.ok(administrador);
+        return ResponseEntity.ok(servicio.save(administrador));
 
     }
 
     @CrossOrigin(origins = "*")
     @PutMapping
     public ResponseEntity<?> editarAdmin(@RequestBody Administradores administrador) {
-        return (ResponseEntity<?>) ResponseEntity.ok();
+        return ResponseEntity.ok(servicio.save(administrador));
     }
 
     @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarAdmin(@PathVariable Integer id) {
-        Optional<Administradores> administrador = Optional.empty();
+    public ResponseEntity<?> eliminarAdmin(@PathVariable(value = "id") Integer id) {
+        Optional<Administradores> administrador = servicio.findById(id);
         if (administrador.isPresent()) {
             servicio.delete(id);
-
+            return ResponseEntity.ok(administrador);
         }
         return ResponseEntity.ok().build();
     }

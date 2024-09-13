@@ -30,10 +30,10 @@ public class HistorialTransaccionesController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
-    public ResponseEntity<?> listHistoryTransation(@PathVariable Integer id) {
-        Optional<HistorialTransacciones> historial = Optional.empty();
+    public ResponseEntity<?> listHistoryTransation(@PathVariable(value = "id") Integer id) {
+        Optional<HistorialTransacciones> historial = servicio.findById(id);
         if (historial.isPresent()) {
-            return ResponseEntity.ok(servicio.findAll());
+            return ResponseEntity.ok(historial);
         }
         return ResponseEntity.notFound().build();
     }
@@ -41,21 +41,22 @@ public class HistorialTransaccionesController {
     @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<?> addHistoryTransation(@RequestBody HistorialTransacciones historial) {
-        return (ResponseEntity<?>) ResponseEntity.ok();
+        return ResponseEntity.ok(servicio.save(historial));
     }
 
     @CrossOrigin(origins = "*")
     @PutMapping
     public ResponseEntity<?> editHistoryTransation(@RequestBody HistorialTransacciones historial) {
-        return (ResponseEntity<?>) ResponseEntity.ok();
+        return ResponseEntity.ok(servicio.save(historial));
     }
 
     @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteCarRegister(@RequestBody Integer id) {
-        Optional<HistorialTransacciones> hOptional = Optional.empty();
+    public ResponseEntity<?> deleteCarRegister(@PathVariable(value = "id") Integer id) {
+        Optional<HistorialTransacciones> hOptional = servicio.findById(id);
         if (hOptional.isPresent()) {
             servicio.delete(id);
+            return ResponseEntity.ok(hOptional);
 
         }
         return ResponseEntity.ok().build();

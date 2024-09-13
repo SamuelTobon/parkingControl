@@ -31,10 +31,10 @@ public class VehiculoRegistradoController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
-    public ResponseEntity<?> listCarRegisterById(@PathVariable Integer id) {
-        Optional<VehiculoRegistrado> vehiculoRegistrado = Optional.empty();
+    public ResponseEntity<?> listCarRegisterById(@PathVariable(value = "id") Integer id) {
+        Optional<VehiculoRegistrado> vehiculoRegistrado = servicio.findById(id);
         if (vehiculoRegistrado.isPresent()) {
-            return ResponseEntity.ok(servicio.findById(id));
+            return ResponseEntity.ok(vehiculoRegistrado);
         }
 
         return ResponseEntity.notFound().build();
@@ -55,10 +55,11 @@ public class VehiculoRegistradoController {
 
     @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteCarRegister(@RequestBody Integer id) {
-        Optional<VehiculoRegistrado> vehiculoRegistrado = Optional.empty();
+    public ResponseEntity<?> deleteCarRegister(@PathVariable(value = "id") Integer id) {
+        Optional<VehiculoRegistrado> vehiculoRegistrado = servicio.findById(id);
         if (vehiculoRegistrado.isPresent()) {
             servicio.delete(id);
+            return ResponseEntity.ok(vehiculoRegistrado);
 
         }
         return ResponseEntity.ok().build();

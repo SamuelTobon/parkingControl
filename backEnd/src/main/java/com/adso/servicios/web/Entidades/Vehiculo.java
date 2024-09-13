@@ -32,7 +32,7 @@ public class Vehiculo {
     private String color;
     @NonNull
     @Column(name = "fechaHoraEntrada", nullable = false)
-    private LocalDateTime fechaIngreso;
+    private LocalDateTime fechaIngreso; // string
     @NonNull
     @Column(name = "puesto", nullable = false, length = 5)
     private String puesto;

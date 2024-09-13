@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.adso.servicios.web.Entidades.Vehiculo;
-import com.adso.servicios.web.Repositorios.VehiculoRepositoy;
+import com.adso.servicios.web.Repositorios.VehiculoRepository;
 import com.adso.servicios.web.Servicios.Interfaces.VehiculoInt;
 
 @Service
 public class VehiculoImp implements VehiculoInt {
 
     @Autowired
-    private VehiculoRepositoy repositoy;
+    private VehiculoRepository repositoy;
 
     @Override
     public List<Vehiculo> findAll() {

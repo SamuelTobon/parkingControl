@@ -14,14 +14,17 @@ public class Administradores {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAdministrador;
-    @NonNull
+
     @Column(name = "nombre", nullable = false, length = 45)
+    @NonNull
     private String nombre;
-    @NonNull
+
     @Column(name = "email", nullable = false, length = 100)
-    private String correo;
     @NonNull
+    private String correo;
+
     @Column(name = "contraseña", nullable = false, length = 255)
+    @NonNull
     private String contraseña;
 
     // Getters y Setters

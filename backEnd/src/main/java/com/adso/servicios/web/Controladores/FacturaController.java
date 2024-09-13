@@ -2,6 +2,7 @@ package com.adso.servicios.web.Controladores;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -14,13 +15,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adso.servicios.web.Entidades.Factura;
-
-import com.adso.servicios.web.Entidades.Vehiculo;
 import com.adso.servicios.web.Servicios.Interfaces.FacturaInt;
 
 @RestController
 @RequestMapping("/api/factura")
 public class FacturaController {
+
+    @Autowired
     private FacturaInt servicio;
 
     @CrossOrigin(origins = "*")
@@ -31,10 +32,11 @@ public class FacturaController {
 
     @CrossOrigin(origins = "*")
     @GetMapping("/{id}")
-    public ResponseEntity<?> listarFacturaById(@PathVariable Integer id) {
-        Optional<Vehiculo> car = Optional.empty();
-        if (car.isPresent()) {
-            return ResponseEntity.ok(servicio.findById(id));
+    public ResponseEntity<?> listarFacturaById(@PathVariable(value = "id") Integer id) {
+        Optional<Factura> factura = servicio.findById(id);
+
+        if (factura.isPresent()) {
+            return ResponseEntity.ok(id);
         }
         return ResponseEntity.notFound().build();
     }
@@ -54,12 +56,12 @@ public class FacturaController {
 
     @CrossOrigin(origins = "*")
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarFactura(@PathVariable Integer id) {
-        Optional<Factura> factura = Optional.empty();
-        if (factura.isPresent()) {
-            servicio.delete(factura.get());
-
+    public ResponseEntity<?> eliminar(@PathVariable(value = "id") Integer id) {
+        Optional<Factura> faOptional = servicio.findById(id);
+        if (faOptional.isPresent()) {
+            servicio.delete(id);
+            return ResponseEntity.ok(faOptional);
         }
-        return ResponseEntity.ok().build();
+        return ResponseEntity.notFound().build();
     }
 }
