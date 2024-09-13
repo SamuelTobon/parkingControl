@@ -2,6 +2,7 @@ package com.adso.servicios.web.Controladores;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -20,6 +21,8 @@ import com.adso.servicios.web.Servicios.Interfaces.ParqueaderoInt;
 
 @RequestMapping("/api/parqueadero")
 public class ParqueaderoController {
+
+    @Autowired
     private ParqueaderoInt servicio;
 
     @CrossOrigin(origins = "*")
