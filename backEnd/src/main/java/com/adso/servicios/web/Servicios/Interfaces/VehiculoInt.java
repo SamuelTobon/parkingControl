@@ -15,4 +15,6 @@ public interface VehiculoInt {
 
     public void delete(Integer id);
 
+    Optional<Vehiculo> findByPlaca(String placa);
+
 }

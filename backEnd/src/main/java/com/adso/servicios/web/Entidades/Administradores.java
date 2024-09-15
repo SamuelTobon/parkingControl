@@ -60,4 +60,9 @@ public class Administradores {
         this.contraseña = contraseña;
     }
 
+    public Object getPassword() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
+    }
+
 }

@@ -37,4 +37,9 @@ public class VehiculoImp implements VehiculoInt {
         servicio.deleteById(id);
     }
 
+    @Override
+    public Optional<Vehiculo> findByPlaca(String placa) {
+        return servicio.findByPlaca(placa);
+    }
+
 }

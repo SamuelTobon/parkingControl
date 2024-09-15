@@ -55,9 +55,9 @@
         </script>
         <script>
             // Función para obtener los datos de la API
-            async function obtenerDatos() {
+            async function buscarVehiculo() {
                 try {
-                    const respuesta = await fetch('https://api.ejemplo.com/historicoCar'); // URL de tu API
+                    const respuesta = await fetch('http://localhost:8081/api/vehiculosestacionados'); // URL de tu API
                     const datos = await respuesta.json();
 
                     // Actualizar el contenido del HTML con los datos recibidos

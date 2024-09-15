@@ -42,4 +42,20 @@ public class AdministradorImp implements AdministradorInt {
         return administradorRepository.findByNombre(texto);
 
     }
+
+    @Override
+    public Optional<Administradores> findByEmail(String email) {
+        return administradorRepository.findByEmail(email);
+
+    }
+
+    @Override
+    public boolean validarCredenciales(String email, String password) {
+        Optional<Administradores> usuarioOpt = administradorRepository.findByEmail(email);
+        if (usuarioOpt.isPresent()) {
+            Administradores usuario = usuarioOpt.get();
+            return usuario.getPassword().equals(password);
+        }
+        return false;
+    }
 }
