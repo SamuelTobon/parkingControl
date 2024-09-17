@@ -51,11 +51,6 @@ public class AdministradorImp implements AdministradorInt {
 
     @Override
     public boolean validarCredenciales(String email, String password) {
-        Optional<Administradores> usuarioOpt = administradorRepository.findByEmail(email);
-        if (usuarioOpt.isPresent()) {
-            Administradores usuario = usuarioOpt.get();
-            return usuario.getPassword().equals(password);
-        }
-        return false;
+        return administradorRepository.findByEmailAndPassword(email, password).isPresent();
     }
 }

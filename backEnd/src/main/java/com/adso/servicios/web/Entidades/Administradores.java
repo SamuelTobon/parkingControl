@@ -21,11 +21,11 @@ public class Administradores {
 
     @Column(name = "email", nullable = false, length = 100)
     @NonNull
-    private String correo;
+    private String email;
 
     @Column(name = "contraseña", nullable = false, length = 255)
     @NonNull
-    private String contraseña;
+    private String password;
 
     // Getters y Setters
     public Integer getIdAdministrador() {
@@ -44,25 +44,20 @@ public class Administradores {
         this.nombre = nombre;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
-    public Object getPassword() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPassword'");
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }
