@@ -17,17 +17,7 @@
 
 <body>
     <br>
-    <!-- Encabezado -->
-    <div id="encabezado-placeholder"></div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white navbar-secondary">
-        <div class="container-fluid">
-            <div class="btn-toolbar" role="toolbar">
-                <button class="btn btn-custom" onclick="location.href='aboutus.html'">Sobre nosotros</button>
-                <button class="btn btn-custom" onclick="location.href='where.html'">¿Dónde estamos ubicados?</button>
-                <button class="btn btn-custom" onclick="location.href='tarifas.html'">Planes y tarifas</button>
-            </div>
-        </div>
-    </nav>
+
 
 
     <!-- Barra de navegación -->
@@ -62,18 +52,30 @@
     </script>
     <script>
         function buscarVehiculo() {
-            const placa = document.querySelector('.input-box').value;
-            fetch(`/api/vehiculosestacionados/buscar?placa=${placa}`)
-                .then(response => response.json())
+            const placa = document.querySelector('.input-box').value.trim();
+
+            if (!placa) {
+                alert('Por favor, ingrese la placa del vehículo.');
+                return;
+            }
+
+            fetch(`http://localhost:8081/api/vehiculosestacionados/buscar?placa=${placa}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Vehículo no encontrado');
+                    }
+                    return response.json();
+                })
                 .then(data => {
                     if (data) {
                         localStorage.setItem('vehiculo', JSON.stringify(data));
                         window.location.href = 'micarro.html';
-                    } else {
-                        alert('Vehículo no encontrado');
                     }
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => {
+                    alert(error.message);
+                    console.error('Error:', error);
+                });
         }
     </script>
 </body>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Where</title>
+    <title>Info Vehiculo</title>
     <!-- jQuery -->
     <script src="../../libs/jquery-3.7.1.js"></script>
     <!-- Bootstrap CSS -->
@@ -16,11 +16,13 @@
 </head>
 
 <body>
+    <br>
     <!-- Encabezado -->
     <div id="encabezado-placeholder"></div>
 
     <!-- Barra de navegación -->
     <div id="barranavegacion-placeholder"></div>
+
 
     <!-- Mi carro -->
 
@@ -32,12 +34,12 @@
                 Tu navegador no soporta el elemento de video.
             </video>
         </div>
-
+        <br>
         <!-- Contenedor de información -->
         <div class="info-container">
-            <div><strong>Placa: </strong><span id="placa">IDE-123</span></div>
-            <div><strong>Hora de ingreso: </strong><span id="horaIngreso">00:00:00</span></div>
-            <div><strong>Total estacionado: </strong><span id="totalEstacionado">00:00:00</span>
+            <div><strong>Placa: </strong><span id="placa"> </span></div>
+            <div><strong>Hora de ingreso: </strong><span id="horaIngreso"></span> </div>
+            <div><strong>Lugar estacionado: </strong><span id="totalEstacionado"> </span>
             </div>
         </div>
 
@@ -54,18 +56,13 @@
             });
         </script>
         <script>
-            // Función para obtener los datos de la API
-            async function buscarVehiculo() {
-                try {
-                    const respuesta = await fetch('http://localhost:8081/api/vehiculosestacionados'); // URL de tu API
-                    const datos = await respuesta.json();
-
-                    // Actualizar el contenido del HTML con los datos recibidos
-                    document.getElementById('placa').textContent = datos.placa;
-                    document.getElementById('horaIngreso').textContent = datos.horaIngreso;
-                    document.getElementById('totalEstacionado').textContent = datos.totalEstacionado;
-                } catch (error) {
-                    console.error('Error al obtener los datos:', error);
+            // Función para obtener los datos del localStorage
+            function obtenerDatos() {
+                const vehiculo = JSON.parse(localStorage.getItem('vehiculo'));
+                if (vehiculo) {
+                    document.getElementById('placa').textContent = vehiculo.placa;
+                    document.getElementById('horaIngreso').textContent = vehiculo.fechaIngreso;
+                    document.getElementById('totalEstacionado').textContent = vehiculo.puesto;
                 }
             }
 

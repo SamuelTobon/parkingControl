@@ -9,7 +9,7 @@ import com.adso.servicios.web.Entidades.Administradores;
 
 public interface AdministradorRepository extends JpaRepository<Administradores, Integer> {
 
-    Optional<List<Administradores>> findByNombre(String nombre);
+    // Optional<List<Administradores>> findByNombre(String nombre);
 
     Optional<Administradores> findByEmail(String email);
 
