@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.adso.servicios.web.Entidades.Administradores;
 
@@ -47,6 +49,7 @@ public class AdminController {
     @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<?> crearAdmin(@RequestBody Administradores administrador) {
+        // administrador.setPassword(passwordEncoder.encode(administrador.getPassword()));
         return ResponseEntity.ok(servicio.save(administrador));
 
     }
@@ -54,6 +57,7 @@ public class AdminController {
     @CrossOrigin(origins = "*")
     @PutMapping
     public ResponseEntity<?> editarAdmin(@RequestBody Administradores administrador) {
+        // administrador.setPassword(passwordEncoder.encode(administrador.getPassword()));
         return ResponseEntity.ok(servicio.save(administrador));
     }
 
@@ -99,6 +103,6 @@ public class AdminController {
         }
 
         private String password;
-       
+
     }
 }
