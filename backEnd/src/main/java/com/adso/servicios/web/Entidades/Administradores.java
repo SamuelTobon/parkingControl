@@ -15,17 +15,19 @@ public class Administradores {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAdministrador;
 
-    @Column(name = "nombre", nullable = false, length = 45)
+    /*
+     * @Column(name = "nombre", nullable = false, length = 45)
+     * 
+     * @NonNull
+     * private String nombre;
+     */
+    @Column(name = "contraseña", nullable = false, length = 255)
     @NonNull
-    private String nombre;
+    private String password;
 
     @Column(name = "email", nullable = false, length = 100)
     @NonNull
     private String email;
-
-    @Column(name = "contraseña", nullable = false, length = 255)
-    @NonNull
-    private String password;
 
     // Getters y Setters
     public Integer getIdAdministrador() {
@@ -36,14 +38,16 @@ public class Administradores {
         this.idAdministrador = idAdministrador;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
+    /*
+     * public String getNombre() {
+     * return nombre;
+     * }
+     * 
+     * public void setNombre(String nombre) {
+     * this.nombre = nombre;
+     * 
+     * }
+     */
     public String getEmail() {
         return email;
     }
