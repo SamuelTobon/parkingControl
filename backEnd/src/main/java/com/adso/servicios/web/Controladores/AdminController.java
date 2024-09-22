@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.adso.servicios.web.Entidades.Administradores;
 
 import com.adso.servicios.web.Servicios.Interfaces.AdministradorInt;
+import com.adso.servicios.web.Servicios.LoginResquest;
+import com.adso.servicios.web.Servicios.AdminResponse;
 
 @RestController
 @RequestMapping("/api/administradores")
@@ -68,4 +70,13 @@ public class AdminController {
         return ResponseEntity.ok().build();
     }
 
+    public ResponseEntity<?> authenticateUser(@RequestBody LoginResquest loginRequest) {
+        boolean isAuthenticated = servicio.authenticate(loginRequest.getEmail(),
+                loginRequest.getContrasena());
+        if (isAuthenticated) {
+            return ResponseEntity.ok(new AdminResponse(true));
+        } else {
+            return ResponseEntity.ok(new AdminResponse(false));
+        }
+    }
 }

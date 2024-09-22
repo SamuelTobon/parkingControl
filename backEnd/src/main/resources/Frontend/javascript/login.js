@@ -4,7 +4,6 @@ $(document).ready(function() {
         var email = $('#email').val();
         var contrasena = $('#contrasena').val();
 
-        // Aquí puedes agregar lógica para autenticar al usuario
         $.ajax({
             url: '/api/administradores', // Cambia esta URL al endpoint correcto de tu backend
             type: 'POST',
@@ -14,9 +13,12 @@ $(document).ready(function() {
                 contrasena: contrasena
             }),
             success: function(response) {
-                // Manejo del éxito, por ejemplo, redirigir a otra página
-                alert('Inicio de sesión exitoso');
-                window.location.href = '/dashboard'; // Redirige a la página de administración o dashboard
+                if (response.success) {
+                    alert('Inicio de sesión exitoso');
+                    window.location.href = '/bienvenido.html'; // Redirige a la página de bienvenida
+                } else {
+                    alert('Credenciales incorrectas');
+                }
             },
             error: function(xhr, status, error) {
                 alert('Error al iniciar sesión');
@@ -25,3 +27,4 @@ $(document).ready(function() {
         });
     });
 });
+

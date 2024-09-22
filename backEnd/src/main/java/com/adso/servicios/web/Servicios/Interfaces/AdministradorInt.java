@@ -18,6 +18,6 @@ public interface AdministradorInt {
 
     public Optional<Administradores> findByEmail(String email);
 
-    public boolean validarCredenciales(String email, String password);
+    public boolean authenticate(String email, String password);
 
 }
