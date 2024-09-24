@@ -2,7 +2,7 @@ $(document).ready(function() {
     $('#loginForm').on('submit', function(e) {
         e.preventDefault();
         var email = $('#email').val();
-        var contrasena = $('#contrasena').val();
+        var password = $('#password').val();
 
         $.ajax({
             url: '/api/administradores', // Cambia esta URL al endpoint correcto de tu backend
@@ -10,7 +10,7 @@ $(document).ready(function() {
             contentType: 'application/json',
             data: JSON.stringify({
                 email: email,
-                contrasena: contrasena
+                password: password
             }),
             success: function(response) {
                 if (response.success) {

@@ -1,8 +1,8 @@
 package com.adso.servicios.web.Servicios;
 
-public class LoginResquest {
+public class LoginRequest {
     private String email;
-    private String contrasena;
+    private String password;
 
     public String getEmail() {
         return email;
@@ -13,11 +13,11 @@ public class LoginResquest {
     }
 
     public String getContrasena() {
-        return contrasena;
+        return password;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setContrasena(String password) {
+        this.password = password;
     }
 
 }

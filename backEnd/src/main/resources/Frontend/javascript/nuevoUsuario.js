@@ -6,8 +6,8 @@ $(document).ready(function() {
         var nombre = $('#nombre').val();
         var email = $('#email').val();
         var confirmEmail = $('#confirm-email').val();
-        var contrasena = $('#contrasena').val();
-        var confirmPassword = $('#confirm-contrasena').val();
+        var password = $('#password').val();
+        var confirmPassword = $('#confirm-password').val();
 
         // Verificar que los correos sean iguales
         if (email !== confirmEmail) {
@@ -16,7 +16,7 @@ $(document).ready(function() {
         }
 
         // Verificar que las contraseñas sean iguales
-        if (contrasena !== confirmContrasena) {
+        if (password !== confirmpassword) {
             alert('Las contraseñas no coinciden.');
             return;
         }
@@ -29,7 +29,7 @@ $(document).ready(function() {
             data: JSON.stringify({
                 nombre: nombre,
                 correo: email,
-                contrasena: contrasena
+                password: password
             }),
             success: function(response) {
                 alert('Usuario creado exitosamente.');
