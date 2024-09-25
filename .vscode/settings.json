@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Parqueadero", "reporitorio"]
+  "cSpell.words": ["Parqueadero", "reporitorio"],
+  "java.compile.nullAnalysis.mode": "automatic"
 }
