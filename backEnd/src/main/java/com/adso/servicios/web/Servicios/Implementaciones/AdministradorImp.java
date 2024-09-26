@@ -38,15 +38,27 @@ public class AdministradorImp implements AdministradorInt {
         administradorRepository.deleteById(id);
     }
 
+<<<<<<< HEAD
     @Override
     public Optional<List<Administradores>> buscar(String texto) {
         return administradorRepository.findByNombre(texto);
     }
 
+=======
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
     @Override
     public Optional<Administradores> findByEmail(String email) {
         return administradorRepository.findByEmail(email);
 
     }
 
+<<<<<<< HEAD
+=======
+    @Override
+    public Optional<List<Administradores>> buscar(String nombre) {
+        return administradorRepository.findByNombre(nombre);
+
+    }
+
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
 }

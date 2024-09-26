@@ -20,7 +20,11 @@ public class Administradores {
     @NonNull
     private String nombre;
 
+<<<<<<< HEAD
     @Column(name = "contraseña", nullable = false, length = 255)
+=======
+    @Column(name = "password", nullable = false, length = 255)
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
     @NonNull
     private String password;
 
