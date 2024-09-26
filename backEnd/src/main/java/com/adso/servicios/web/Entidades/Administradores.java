@@ -15,13 +15,16 @@ public class Administradores {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idAdministrador;
 
-    /*
-     * @Column(name = "nombre", nullable = false, length = 45)
-     * 
-     * @NonNull
-     * private String nombre;
-     */
+    @Column(name = "nombre", nullable = false, length = 45)
+
+    @NonNull
+    private String nombre;
+
+<<<<<<< HEAD
     @Column(name = "contraseña", nullable = false, length = 255)
+=======
+    @Column(name = "password", nullable = false, length = 255)
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
     @NonNull
     private String password;
 
@@ -38,16 +41,15 @@ public class Administradores {
         this.idAdministrador = idAdministrador;
     }
 
-    /*
-     * public String getNombre() {
-     * return nombre;
-     * }
-     * 
-     * public void setNombre(String nombre) {
-     * this.nombre = nombre;
-     * 
-     * }
-     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+
+    }
+
     public String getEmail() {
         return email;
     }

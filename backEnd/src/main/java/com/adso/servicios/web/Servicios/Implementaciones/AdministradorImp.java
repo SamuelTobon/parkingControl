@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+
 import org.springframework.stereotype.Service;
 
 import com.adso.servicios.web.Entidades.Administradores;
@@ -17,8 +16,6 @@ public class AdministradorImp implements AdministradorInt {
 
     @Autowired
     private AdministradorRepository administradorRepository;
-
-    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @Override
     public List<Administradores> findAll() {
@@ -41,26 +38,27 @@ public class AdministradorImp implements AdministradorInt {
         administradorRepository.deleteById(id);
     }
 
-    /*
-     * @Override
-     * public Optional<List<Administradores>> buscar(String texto) {
-     * return administradorRepository.findByNombre(texto);
-     * }
-     */
+<<<<<<< HEAD
+    @Override
+    public Optional<List<Administradores>> buscar(String texto) {
+        return administradorRepository.findByNombre(texto);
+    }
 
+=======
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
     @Override
     public Optional<Administradores> findByEmail(String email) {
         return administradorRepository.findByEmail(email);
 
     }
 
+<<<<<<< HEAD
+=======
     @Override
-    public boolean validarCredenciales(String email, String password) {
-        Optional<Administradores> usuarioOpt = administradorRepository.findByEmail(email);
-        if (usuarioOpt.isPresent()) {
-            Administradores usuario = usuarioOpt.get();
-            return passwordEncoder.matches(password, usuario.getPassword());
-        }
-        return false;
+    public Optional<List<Administradores>> buscar(String nombre) {
+        return administradorRepository.findByNombre(nombre);
+
     }
+
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
 }

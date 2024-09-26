@@ -14,10 +14,8 @@ public interface AdministradorInt {
 
     public void delete(Integer id);
 
-    // public Optional<List<Administradores>> buscar(String nombre);
+    public Optional<List<Administradores>> buscar(String nombre);
 
     public Optional<Administradores> findByEmail(String email);
-
-    public boolean validarCredenciales(String email, String password);
 
 }

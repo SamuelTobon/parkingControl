@@ -3,7 +3,7 @@ package com.adso.servicios.web.Controladores;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,8 +15,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-//import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-//import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.adso.servicios.web.Entidades.Administradores;
 
@@ -72,4 +70,11 @@ public class AdminController {
         return ResponseEntity.ok().build();
     }
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> f58bc9fa61f32d27e38040fff577e2686901e137
 }
+=======
+}
+>>>>>>> f79a8f6ce75b85039745ee7f194757f0f75af17c
