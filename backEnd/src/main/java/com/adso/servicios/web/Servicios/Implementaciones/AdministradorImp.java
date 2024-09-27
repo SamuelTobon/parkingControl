@@ -38,8 +38,8 @@ public class AdministradorImp implements AdministradorInt {
     }
 
     @Override
-    public Optional<List<Administradores>> buscar(String texto) {
-        return administradorRepository.findByNombre(texto);
+    public Optional<List<Administradores>> buscar(String nombre) {
+        return administradorRepository.findByNombre(nombre);
 
     }
 }
