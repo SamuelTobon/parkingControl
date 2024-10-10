@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.adso.servicios.web.Entidades.Administradores;
@@ -37,9 +38,10 @@ public class AdministradorImp implements AdministradorInt {
         administradorRepository.deleteById(id);
     }
 
+<<<<<<< HEAD
     @Override
-    public Optional<List<Administradores>> buscar(String nombre) {
-        return administradorRepository.findByNombre(nombre);
+    public Optional<List<Administradores>> buscar(String texto) {
+        return administradorRepository.findByNombre(texto);
 
     }
 }

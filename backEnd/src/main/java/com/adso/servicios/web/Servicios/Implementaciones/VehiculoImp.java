@@ -14,27 +14,32 @@ import com.adso.servicios.web.Servicios.Interfaces.VehiculoInt;
 public class VehiculoImp implements VehiculoInt {
 
     @Autowired
-    private VehiculoRepository repositoy;
+    private VehiculoRepository servicio;
 
     @Override
     public List<Vehiculo> findAll() {
-        return repositoy.findAll();
+        return servicio.findAll();
     }
 
     @Override
     public Optional<Vehiculo> findById(Integer id) {
-        return repositoy.findById(id);
+        return servicio.findById(id);
     }
 
     @Override
     public Vehiculo save(Vehiculo vehiculo) {
-        return repositoy.save(vehiculo);
+        return servicio.save(vehiculo);
 
     }
 
     @Override
     public void delete(Integer id) {
-        repositoy.deleteById(id);
+        servicio.deleteById(id);
+    }
+
+    @Override
+    public Optional<Vehiculo> findByPlaca(String placa) {
+        return servicio.findByPlaca(placa);
     }
 
 }

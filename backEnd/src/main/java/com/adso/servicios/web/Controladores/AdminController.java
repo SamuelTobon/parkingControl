@@ -45,6 +45,7 @@ public class AdminController {
     @CrossOrigin(origins = "*")
     @PostMapping
     public ResponseEntity<?> crearAdmin(@RequestBody Administradores administrador) {
+        // administrador.setPassword(passwordEncoder.encode(administrador.getPassword()));
         return ResponseEntity.ok(servicio.save(administrador));
 
     }
@@ -52,6 +53,7 @@ public class AdminController {
     @CrossOrigin(origins = "*")
     @PutMapping
     public ResponseEntity<?> editarAdmin(@RequestBody Administradores administrador) {
+        // administrador.setPassword(passwordEncoder.encode(administrador.getPassword()));
         return ResponseEntity.ok(servicio.save(administrador));
     }
 
@@ -65,4 +67,5 @@ public class AdminController {
         }
         return ResponseEntity.ok().build();
     }
+
 }

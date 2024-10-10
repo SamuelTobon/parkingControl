@@ -16,4 +16,6 @@ public interface AdministradorInt {
 
     public Optional<List<Administradores>> buscar(String nombre);
 
+    public Optional<Administradores> findByEmail(String email);
+
 }

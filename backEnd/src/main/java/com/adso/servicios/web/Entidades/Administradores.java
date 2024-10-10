@@ -16,16 +16,17 @@ public class Administradores {
     private int id;
 
     @Column(name = "nombre", nullable = false, length = 45)
+
     @NonNull
     private String nombre;
+
+    @Column(name = "contraseña", nullable = false, length = 255)
+    @NonNull
+    private String password;
 
     @Column(name = "email", nullable = false, length = 100)
     @NonNull
     private String email;
-
-    @Column(name = "password", nullable = false, length = 255)
-    @NonNull
-    private String password;
 
     // Getters y Setters
     public Integer getIdAdministrador() {
@@ -42,6 +43,7 @@ public class Administradores {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+
     }
 
     public String getEmail() {
